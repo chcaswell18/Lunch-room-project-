@@ -6,7 +6,7 @@ print("There are three objects on the counter next to you but you have to act fa
 print("A metal lunch tray, a spare oxygen mask, and some food that must have been from the day before.")
 print("Which will you use?")
 loss = 0
-while loss == 0:
+while loss != 1:
   while num_decisions == 0:
     decision = input("tray, mask, or food?")
     if decision == "mask":
@@ -35,5 +35,57 @@ while loss == 0:
         print("You know the killer will break into the room very quickly.")
         print("You need to act fast.")
         decision3 = input("run, hide, fight, or reason?")
+        if decision3 == "reason":
+          print("You are still unsure as to what the killer wants with you and why he's doing what he's doing.")
+          print("You decide to try and ask him some questions.")
+          print('"Hey!" You yell.')
+          print('"What do you want with me?!"')
+          print("The killer doesn't stop. He keeps slamming the door, trying to get in.")
+          print("You are unsure what to do.")
+          reason = input("beg, threaten, or reason?")
+          if reason == "beg":
+            print('"Please, I have a wife and two kids." You say.')
+            print("You hear a loud bang and the kitchen door swings open.")
+            print("In a state of panic you begin to run but it's already too late.")
+            print("With a quick swing of his bat you're knocked out cold onto the kitchen floor.")
+            print("You Lose.")
+            loss = 1
+            break
+          elif reason == "threaten":
+            print("You decided to threaten the killer.")
+            print("There are a couple utensils from the kitchen lying around.")
+            kitchen_weapon = input("Spoon, knife, or fists?")
+            if kitchen_weapon == "knife" or kitchen_weapon == "spoon":
+              print("Its too late.")
+              print("The door slams open and as you reach for the " + kitchen_weapon + ", you are struck over the head and your vision fades.")
+              print("You Lose.")
+              loss = 1
+              break
+            elif kitchen_weapon == "fists":
+              print("You chose to rely on your pure manhood against this murderer and you chose your fists.")
+              print("The killer breaks open the door and see's you standing there fists held high.")
+              print("The killer can't help but laugh at how helpless you look.")
+              print("The killer takes off his mask to reveal that it's Ameer.")
+              print('He looks at you and says "April fools." and walks away.')
+              print("You Win.")
+              loss = 1
+              break
+              
+            else:
+              print("You decided to chose an unexisting weapon.")
+              print("The killer makes his way into the room and kills you.")
+              print("You Lose.")
+              loss = 1
+              break
+          elif reason == "reason":
+            print('"Stop," you yell, "I will pay you anything you want."')
+            print("The killer hesitates for a second thinking about you're offer.")
+            print("But not for very long.")
+            print("The door slams open and the killer stands over you wielding his baseball bat.")
+            print("And with one swift swing, your vision fades.")
+            print("You Lose.")
+            loss = 1
+            break
+          
     else:
       print("Make sure you chose one of the given items.")
