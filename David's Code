@@ -2,7 +2,7 @@ num_decisions = 0
 loss = 0
 def game_over():
   print("You Lose.")
-   
+  
 print("You're running away from the killer.")
 print("He's just punctured your oxygen mask with his knife but you still managed to escape.")
 print("You run through a doorway and you see you're in the school kitchen.")
@@ -10,26 +10,25 @@ print("There are three objects on the counter next to you but you have to act fa
 print("A metal lunch tray, a spare oxygen mask, and some food that must have been from the day before.")
 print("Which will you use?")
 decision = input("tray, mask, or food?")
-while loss == 0:
-  while num_decisions == 0:
-    if decision == "mask":
-      print("You run over to the oxygen mask as fast as you can and replace the broken one with it")
-      print("As you turn around to see where the killer is, you're struck over the head by a baseball bat and are knocked out cold.")
+while num_decisions == 0:
+  if decision == "mask":
+    print("You run over to the oxygen mask as fast as you can and replace the broken one with it")
+    print("As you turn around to see where the killer is, you're struck over the head by a baseball bat and are knocked out cold.")
+    game_over()
+    break
+  elif decision == "food":
+    print("You decide now is a good time for a snack break.")
+    print("As you chow down on a day old lunch the killer walks into the kitchen and sees you eating.")
+    print("Without hesitation he swings his baseball bat at you and its the last thing you see.")
+    game_over()
+    break
+  elif decision == "tray":
+    print("You take the metal food tray and quickly jam it underneath the door buying you a little bit of time.")
+    decision2 = input("food or mask?")
+    if decision2 == "food":
+      print("You try to eat the food but suffocate due to lack of oxygen.")
       game_over()
       break
-    elif decision == "tray":
-      print("You decide now is a good time for a snack break.")
-      print("As you chow down on day old lunch the killer walks into the kitchen and sees you eating.")
-      print("Without hesitation he swings his baseball bat at you and its the last thing you see.")
-      game_over()
-      break
-    elif decision == "tray":
-      print("You take the metal food tray and quickly jam it underneath the door buying you a little bit of time.")
-      decision2 = input("food or mask?")
-      if decision2 == "food":
-        print("You try to eat the food but suffocate due to lack of oxygen.")
-        game_over()
-        break
     elif decision2 == "mask":
       print("You replace your broken oxygen mask with the new one and take a deep breath of air.")
       print("You know the killer will break into the room very quickly.")
@@ -40,5 +39,7 @@ while loss == 0:
         print("In the Kitchen you see three immediate weapon choices, a pizza cutter, a kitchen knife, and a pipe")
         print("Which one do you chose?")
         w_decision = input("cutter, knife, or pipe?")
-        if w-decision == "cutter":
+        if w_decision == "cutter":
           print("You grab the pizza cutter, yet the killer breaks down the door with his bat")
+          print("What Next?")
+          a_decision = input("stab, or throw?")
