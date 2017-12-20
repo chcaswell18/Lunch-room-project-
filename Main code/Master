@@ -35,6 +35,18 @@ while loss != 1:
         print("You know the killer will break into the room very quickly.")
         print("You need to act fast.")
         decision3 = input("run, hide, fight, or reason?")
+        if decision3 == "run":
+          print("Which way are you going to exit from?")
+          exit=input("front,back")
+          if exit==("front"):
+            print ("You made it away from the killer.")
+            loss = 1
+            break
+          elif exit==("back"):
+            print("The killer was on the other side of the door,and knock you out cold with the bat. ")
+            print("You Lose")
+            loss = 1
+            break
         if decision3 == "reason":
           print("You are still unsure as to what the killer wants with you and why he's doing what he's doing.")
           print("You decide to try and ask him some questions.")
