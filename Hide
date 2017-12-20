@@ -1,0 +1,41 @@
+#aList.remove('xyz');
+#myList.insert(0,"Yes")
+import sys
+def fridge():
+  print("You go to hide into the fridge, as the killer gains access to the kitchen. The killer breaks open the doors to the kitchen and walks around the room until he walks by the fridge, curious if anyone is in there. You were able to fit in thanks to your small size, and he assumes that the fridge is too small to fit a human being. He walks away.")
+def freezer():
+  print("You run into the freezer to hide and are able to lock the door. The killer breaks in and walks throughout the whole vicinity to look for a victim. After walking past the fridge and turns on the dishwasher, he walks to the freezer and looks through the door window. You crouch so that he cannot see you, therefore he sees nothing and walks away. Then, the killer leaves the kitchen. ")
+print("*please type all your answers in lowercase letters*")
+print("")
+print("After being able to delay the killer, you now decide to hide in the kitchen.")
+print("")
+print("")
+print("You are surrounded by different kitchenware, machines and doors. In order to fit into a hiding spot, your choices for hiding are either in the freezer, dishwasher, or fridge.")
+print("")
+print(". . . You hear banging on the door, your time is limited . . .")
+print("")
+x = input("Where will you hide? freezer, fridge, or dishwasher?")
+print("")
+if x == "freezer":
+  freezer()
+elif x == "fridge": 
+  fridge()
+elif x == "dishwasher":
+  print("After hiding in the dishwasher, the killer breaks the door and gains access to the kitchen. He walks around the area looking for a new victim. Seeing the dishwasher, he is curious if someone is hiding in there. He turns it on and leaves the room.")
+  print("")
+  print("Y O U     L O S E")
+  sys.exit()
+  
+print("")
+print("")
+print("After the killer leaves the kitchen, you leave your hiding spot and see him walk into the cafeteria. He walks from table to table and checking under each one to find any victims. Next to the kitchen door, you see the metal tray that you originally used to keep the door closed.")
+y = input("Do you want to keep this tray?")
+z = 0
+if y == "yes":
+  z = ['zero']
+  z.remove('zero')
+  z.insert(0, 'tray')
+else:
+  print("")
+print("")
+  
