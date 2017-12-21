@@ -9,7 +9,7 @@ print("*please type all your answers in lowercase letters*")
 print("")
 print("After being able to delay the killer, you now decide to hide in the kitchen.")
 print("")
-print("")
+print("")                                              
 print("You are surrounded by different kitchenware, machines and doors. In order to fit into a hiding spot, your choices for hiding are either in the freezer, dishwasher, or fridge.")
 print("")
 print(". . . You hear banging on the door, your time is limited . . .")
@@ -37,5 +37,22 @@ if y == "yes":
   z.insert(0, 'tray')
 else:
   print("")
-print("")
+print("The killer hears noise in the kitchen and his making his way towards you from the cafeteria. Having to think fast, your only choices are fight or flight. Keep in mind that the freezer lock is broken, and the dishwasher is turned on; so your only hiding option is the fridge.")
+h = input("Are you going to fight back, or hide in the fridge? Type fight to fight back or hide otherwise.")
+if h == "fight":
+  print("")
+  i = input("Do you want to hit him right away or from behind? Type now to hit right away or behind otherwise.")
+  if i == "now":
+    print("")
+    print("You attempt to hit him right away, but the killer sees you and instantly defends it, then attacks you.")
+    print("")
+    print("Y O U    L O S E")
+    sys.exit()
+  if i == "behind":
+    print("")
+    print("You sneak up behind the killer as he walks into the kitchen, hitting him in the head with the metal tray you originally had with you. He gets knocked out by a strike to the head, giving you a chance to escape the cafeteria while he's unconcsious. ")
+  if h == "hide":
+    print("You go to the fridge to hide, and when he goes to the kitchen he heads to the fridge as part of his search. He opens the fridge and finds you, then attacks you. ")
+    print("Y O U    L O S E")  
+
   
