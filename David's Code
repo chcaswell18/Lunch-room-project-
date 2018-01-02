@@ -24,11 +24,11 @@ def game():
             if w_decision == "cutter":
               print("Which weapon do you pick now?")
           print("In the Kitchen you see three immediate weapon choices, a pizza cutter, a kitchen knife, and a pipe. Which one do you chose?")
-          w_decision = input("cutter, knife, or pipe?")
-          if w_decision == "cutter":
+          w_decision = input("Cutter, knife, or pipe?")
+          if w_decision == "cutter"or "Cutter":
             print("You grab the pizza cutter, yet the killer breaks down the door with his bat. What next?")
-            a_decision = input("cut, or throw?")
-            if a_decision == "cut":
+            a_decision = input("Cut, or throw?")
+            if a_decision == "cut" or "Cut":
               random_choice()
               if random_choice() == 0:
                 print("You attempt to cut the killer with the cutter but before you can reach him with it, he knocks you out with his bat.")
@@ -37,7 +37,7 @@ def game():
                 print("You have cut a wound on the killer, he hesitates")
                 killer_hp += -2
                 go_again()
-            elif a_decision == "throw":
+            elif a_decision == "Throw" or "throw":
               print("You throw the cutter at him.")
               random_choice()
               if random_choice() == 0:
@@ -45,21 +45,25 @@ def game():
                 game_over()
               elif random_choice() == 1:
                 print("The blade cuts into his stomach")
-                killer_hp += -10
-                print("He hesitates giving you an opprtunity to pick up a another weapon")
+                killer_hp += -5
+                print("He steps back and growls at you, giving you an opprtunity to pick up a another weapon")
                 weapon_choice()
-          elif w_decision == "knife":
+              if killer_hp >= 10:
+                end_game()
+          elif w_decision == "Knife" or "knife":
             print("You grab the kitchen knife, yet the killer breaks down the door with his bat. What Next?")
-            a2_decision = input("stab, or throw?")
-            if a2_decision == "stab":
+            a2_decision = input("Stab, or throw?")
+            if a2_decision == "Stab" or "stab":
               random_choice()
               if random_choice() == 0:
                 print("You attempt to stab the killer but right when you reach him with it, he knocks you out with his bat. After that he smashes your head in with it.")
                 game_over()
               elif random_choice() == 1:
-                print("You stab the killer with the knife, he hesitates")
-                killer_hp += 5
-            elif a2_decision == "throw":
+                print("You stab the killer with the knife, he steps back, saying")
+                print("You're making this harder on yourself")
+                killer_hp += -10
+                go_again()
+            elif a2_decision == "Throw" or "throw":
               print("You throw the knife at him")
               random_choice()
               if random_choice() == 0:
@@ -68,33 +72,46 @@ def game():
               elif random_choice() == 1:
                 print("It stabs into his chest.")
                 killer_hp += -10
-                print("He hesitates giving you an opprtunity to pick up a another weapon")
+                print("He grabs the wound on his chest and steps back, giving you an opprtunity to pick up a another weapon")
                 weapon_choice()
-        if killer_hp >= 10:
-          end_game()
+              if killer_hp >= 10:
+                end_game()
+          elif w_decision == "Pipe" or "pipe":
+            print("You grab the pipe, and the killer breaks down the door using his bat. What Next?")
+            a3_decision = input("Whack or guard?")
+            if a3_decision == "Whack" or "whack":
+              random_choice()
+              if random_choice() == 0:
+                print("You missed the killer, leaving you vulnerable, he crushes your skull with his bat")
+                game_over()
+              elif random_choice() == 1:
+                print("You successfully whack him with your bat, stunning him")
+                killer_hp += -10
+                go_again()
+            if killer_hp >= 10:
+              end_game()
 
 def game_over():
     print("You Lose.")
     print("Retry?")
-    retry = input("Yes or No?")
+    retry  = input("Yes or No?")
     if retry == "No" or "no":
       print("Ok")
-    else retry != "No" or "no":
-      if retry == "Yes" or "yes":
-        game()
-      else retry != "Yes" or "yes":
-        print("TRY AGAIN AND GIVE A PROPER ANSWER!")
-        game_over()
+    if retry == "Yes" or "yes":
+     game()
+    if retry != "Yes" or "yes" or "No" or "no":
+      print("TRY AGAIN AND GIVE A PROPER ANSWER!")
+      game_over()
 def end_game():
   print ("You can tell he is dying")
 def random_choice():
-  random.  randrange(0,1)
+  random.randrange(0,1)
 def go_again():
   print("Attack Again?")
   again_decision = input("Yes or No?")
-  if again_decision == "Yes":
+  if again_decision == "Yes" or "yes":
     random_choice()
-  if again_decision == "No":
+  if again_decision == "No"or "no":
     print("The killer knocks you out with his bat")
     game_over()
 game()
