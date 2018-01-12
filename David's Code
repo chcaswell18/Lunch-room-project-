@@ -7,7 +7,7 @@ def game():
     print("Which will you use?")
     decision = input("tray, mask, or food?")
     if decision == "mask":
-      print("You run over to the oxygen mask as fast as you can and replace the broken one with itAs you turn around to see where the killer is, you're struck over the head by a baseball bat and are knocked out cold.")
+      print("You run over to the oxygen mask as fast as you can and replace the broken one with it as you turn around to see where the killer is, you're struck over the head by a baseball bat and are knocked out cold.")
       game_over()
       break
     elif decision == "food":
@@ -25,11 +25,136 @@ def game():
         print("You replace your broken oxygen mask with the new one and take a deep breath of air.You know the killer will break into the room very quickly.You need to act fast.")
         decision3 = input("run, hide, fight, or reason?")
         if decision3 == "fight":
-          def weapon_choice():
-            if w_decision == "cutter":
-              print("Which weapon do you pick now?")
           print("In the Kitchen you see three immediate weapon choices, a pizza cutter, a kitchen knife, and a pipe. Which one do you chose?")
           w_decision = input("Cutter, knife, or pipe?")
+          def weapon_choice():
+            while num_decision == 0:
+              w2_decision = input("Knife or pipe?")
+              w3_decision = input("Cutter or pipe?")
+              if w_decision or w3_decision == "Cutter"or"cutter":
+                print("Which weapon do you pick now?")
+                if w2_decision == "Knife" or "knife":
+                  print("You grab the kitchen knife. What Next?")
+                  a2_decision = input("Stab, or throw?")
+                  if a2_decision == "Stab" or "stab":
+                    print("You stab the killer with the knife, he steps back, knife in his chest, saying")
+                    print("You're making this harder on yourself")
+                    killer_hp += -10
+                    weapon_choice()
+                  elif a2_decision == "Throw" or "throw":
+                    print("You throw the knife at him")
+                    print("The handle hits him but it is of no use, he whacks you with his bat,knocking you out on the floor.")
+                    break
+                    game_over()
+                  if killer_hp >= 10:
+                    end_game()
+                    break
+                if w2_decision == "Pipe" or "pipe":
+                  print("You grab the pipe. What Next?")
+                  a3_decision = input("Whack or guard?")
+                  if a3_decision == "Whack" or "whack":
+                    print("You successfully whack him with your bat, stunning him")
+                    killer_hp += -10
+                    go_again()
+                  elif a3_decision == "Guard" or "guard":
+                    print("You managed to block his bat as he swings at you. What Next?")
+                    ab1_decision = input("Take or finish?")
+                    if ab1_decision == "Take" or "take":
+                      print("How are you going to get it?")
+                      print("Knee him or grab the bat?")
+                      ab2_decision = input("Knee or Grab?")
+                      if ab2_decision == "Knee" or "knee":
+                        print("You kneed him where it hurts, he drops to the ground in pain, knocking himself unconscious.")
+                        print("You grab his bat and run out the door you came from, avoiding contact with the killer as you walk by.")
+                        print("You Win!")
+                        break
+                      elif ab2_decision == "Grab" or "grab":
+                        print("You grab his bat but he kicks you in the knee and smack you up the head with the handle, knocking you out.")
+                        game_over()
+                        break
+                    elif ab1_decision == "Finish" or "finish":
+                      print("You back off and try to swing at his head, but he swings his bat super hard into your chest, crushing your lungs.")
+                      game_over()
+                if killer_hp >= 10:
+                  end_game()
+                  break
+              elif w_decision or w2_decision == "Knife" or "knife":
+                print("Which weapon do you pick now?")
+                if w3_decision == "cutter"or "Cutter":
+                  print("You grab the pizza cutter, yet the killer breaks down the door with his bat. What next?")
+                  a_decision = input("Cut, or throw?")
+                  if a_decision == "cut" or "Cut":
+                    print("You attempt to cut the killer with the cutter but before you can reach him with it, he knocks you out with his bat.")
+                    game_over()
+                    break
+                  elif a_decision == "Throw" or "throw":
+                    print("You throw the cutter at him.")
+                    print("The blade cuts into his stomach")
+                    killer_hp += -5
+                    print("He steps back and growls at you, giving you an opprtunity to pick up a another weapon")
+                    weapon_choice()
+                  if killer_hp >= 10:
+                    end_game()
+                    break
+                elif w3_decision == "Pipe" or "pipe":
+                  print("You grab the pipe. What Next?")
+                  a3_decision = input("Whack or guard?")
+                  if a3_decision == "Whack" or "whack":
+                    print("You successfully whack him with your bat, stunning him")
+                    killer_hp += -10
+                    go_again()
+                  elif a3_decision == "Guard" or "guard":
+                    print("You managed to block his bat as he swings at you. What Next?")
+                    ab1_decision = input("Take or finish?")
+                    if ab1_decision == "Take" or "take":
+                      print("How are you going to get it?")
+                      print("Knee him or grab the bat?")
+                      ab2_decision = input("Knee or Grab?")
+                      if ab2_decision == "Knee" or "knee":
+                        print("You kneed him where it hurts, he drops to the ground in pain,   knocking himself unconscious.")
+                        print("You run out the door you came from, avoiding contact with the killer as you walk by.")
+                        print("You Win!")
+                        break
+                      elif ab2_decision == "Grab" or "grab":
+                        print("You grab his bat but he kicks you in the knee and smack you up the head with the handle, knocking you out.")
+                        game_over()
+                        break
+                    elif ab1_decision == "Finish" or "finish":
+                      print("You back off and try to swing at his head, but he swings his bat super hard into your chest, crushing your lungs.")
+                      game_over()
+                if killer_hp >= 10:
+                  end_game()
+                  break
+              if w_decision == "cutter" or "Cutter" or "Knife" or "knife":
+                if (w2_decision == "Knife" or "knife") and (w3_decision == "Cutter" or "cutter"):
+                  print("You grab the pipe, you last and final weapon in this fight. What Next?")
+                  a3_decision = input("Whack or guard?")
+                  if a3_decision == "Whack" or "whack":
+                    print("You successfully whack him with your bat, stunning him")
+                    killer_hp += -10
+                    go_again()
+                  elif a3_decision == "Guard" or "guard":
+                    print("You managed to block his bat as he swings at you. What Next?")
+                    ab1_decision = input("Take or finish?")
+                    if ab1_decision == "Take" or "take":
+                      print("How are you going to get it?")
+                      print("Knee him or grab the bat?")
+                      ab2_decision = input("Knee or Grab?")
+                      if ab2_decision == "Knee" or "knee":
+                        print("You kneed him where it hurts, he drops to the ground in pain, knocking himself unconscious.")
+                        print("You run out the door you came from, avoiding contact with the killer as you walk by.")
+                        print("You Win!")
+                        break
+                      elif ab2_decision == "Grab" or "grab":
+                        print("You grab his bat but he kicks you in the knee and smack you up the head with the handle, knocking you out.")
+                        game_over()
+                        break
+                    elif ab1_decision == "Finish" or "finish":
+                      print("You back off and try to swing at his head, but he swings his bat super hard into your chest, crushing your lungs.")
+                      game_over()
+                  if killer_hp >= 10:
+                    end_game()
+                    break
           if w_decision == "cutter"or "Cutter":
             print("You grab the pizza cutter, yet the killer breaks down the door with his bat. What next?")
             a_decision = input("Cut, or throw?")
@@ -58,8 +183,8 @@ def game():
               print("The handle hits him but it is of no use, he whacks you with his bat,knocking you out on the floor.")
               game_over()
               break
-              if killer_hp >= 10:
-                end_game()
+            if killer_hp >= 10:
+              end_game()
           if w_decision == "Pipe" or "pipe":
             print("You grab the pipe, and the killer breaks down the door using his bat. What Next?")
             a3_decision = input("Whack or guard?")
@@ -119,6 +244,21 @@ def game_over():
           print("TRY AGAIN AND GIVE A PROPER ANSWER!")
           break
           game_over()
+def go_again():
+  while num_decision == 0:
+    print("Do you want do this again?")
+    re_decision = input("Yes or no?")
+    if killer_hp >= 10:
+      end_game()
+      break
+    if re_decision == "Yes" or "yes":
+      print("You successfully whack him with your bat, stunning him")
+      killer_hp += -10
+      go_again()
+    elif re_decision == "No" or "no":
+      print("Before you can react the killer bashes your head with a swing of his bat.")
+      game_over()
+      break
 def end_game():
   while killer_hp >= 10:
      print ("You can tell the killer is dying, one hand is gripping his chest, he leans on the wall in front of the doorway, end of the bat touching the floor. You can hear panting from under his mask as he drops the bat, quietly saying")
@@ -134,4 +274,9 @@ def end_game():
        print("Do you keep the bat or do you drop it")
        eg2_decision = input("Keep or drop?")
        if eg2_decision == "Keep" or "keep":
+         print("You keep the bat as you walk out the room from where you came in")
+         print("You Win!")
+       elif eg2_decision == "Drop" or "drop":
+         print("You drop his bat on the ground and walk out")
+         print("You Win!?")
 game()
