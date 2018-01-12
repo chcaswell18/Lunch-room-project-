@@ -1,103 +1,232 @@
-num_decisions = 0
-print("You're running away from the killer.")
-print("He's just punctured your oxygen mask with his knife but you still managed to escape.")
-print("You run through a doorway and you see you're in the school kitchen.")
-print("There are three objects on the counter next to you but you have to act fast.")
-print("A metal lunch tray, a spare oxygen mask, and some food that must have been from the day before.")
-print("Which will you use?")
-loss = 0
-while loss != 1:
-  while num_decisions == 0:
-    decision = input("tray, mask, or food?")
-    if decision == "mask":
-      print("You run over to the oxygen mask as fast as you can and replace the broken one with it")
-      print("As you turn around to see where the killer is, you're struck over the head by a baseball bat and are knocked out cold.")
-      print("You Lose.")
-      loss = 1
-      break
-    elif decision == "food":
-      print("You decide now is a good time for a snack break.")
-      print("As you chow down on day old lunch the killer walks into the kitchen and sees you eating.")
-      print("Without hesitation he swings his baseball bat at you and its the last thing you see.")
-      print("You Lose.")
-      loss = 1
-      break
-    elif decision == "tray":
-      print("You take the metal food tray and quickly jam it underneath the door buying you a little bit of time.")
-      decision2 = input("food or mask?")
-      if decision2 == "food":
-        print("You try to eat the food but suffocate due to lack of oxygen.")
+def kitchen():
+  computerLabSecret = False
+  print("You're running away from the killer.")
+  print("He's just punctured your oxygen mask with his knife but you still managed to escape.")
+  print("You run through a doorway and you see you're in the school kitchen.")
+  print("There are three objects on the counter next to you but you have to act fast.")
+  print("A metal lunch tray, a spare oxygen mask, and some food that must have been from the day before.")
+  print("Which will you use?")
+  print("")
+  loss = 0
+  while loss != 1:
+    while True:
+      decision = input("tray, mask, or food?")
+      decision = decision.lower()
+      if decision == "mask":
+        print("You run over to the oxygen mask as fast as you can and replace the broken one with it")
+        print("As you turn around to see where the killer is, you're struck over the head by a baseball bat and are knocked out cold.")
+        print("You Lose.")
+        print("")
+        loss = 1
+      elif decision == "food":
+        print("You decide now is a good time for a snack break.")
+        print("As you chow down on day old lunch the killer walks into the kitchen and sees you eating.")
+        print("Without hesitation he swings his baseball bat at you and its the last thing you see.")
         print("You Lose.")
         loss = 1
-        break
-      elif decision2 == "mask":
-        print("You replace your broken oxygen mask with the new one and take a deep breath of air.")
-        print("You know the killer will break into the room very quickly.")
-        print("You need to act fast.")
-        decision3 = input("run, hide, fight, or reason?")
-        if decision3 == "run":
-          print("Which way are you going to exit from?")
-          exit=input("front,back")
-          if exit==("front"):
-            print ("You made it away from the killer.")
-            loss = 1
-            break
-          elif exit==("back"):
-            print("The killer was on the other side of the door,and knock you out cold with the bat. ")
-            print("You Lose")
-            loss = 1
-            break
-        if decision3 == "reason":
-          print("You are still unsure as to what the killer wants with you and why he's doing what he's doing.")
-          print("You decide to try and ask him some questions.")
-          print('"Hey!" You yell.')
-          print('"What do you want with me?!"')
-          print("The killer doesn't stop. He keeps slamming the door, trying to get in.")
-          print("You are unsure what to do.")
-          reason = input("beg, threaten, or reason?")
-          if reason == "beg":
-            print('"Please, I have a wife and two kids." You say.')
-            print("You hear a loud bang and the kitchen door swings open.")
-            print("In a state of panic you begin to run but it's already too late.")
-            print("With a quick swing of his bat you're knocked out cold onto the kitchen floor.")
-            print("You Lose.")
-            loss = 1
-            break
-          elif reason == "threaten":
-            print("You decided to threaten the killer.")
-            print("There are a couple utensils from the kitchen lying around.")
-            kitchen_weapon = input("Spoon, knife, or fists?")
-            if kitchen_weapon == "knife" or kitchen_weapon == "spoon":
-              print("Its too late.")
-              print("The door slams open and as you reach for the " + kitchen_weapon + ", you are struck over the head and your vision fades.")
+      elif decision == "tray":
+        print("You take the metal food tray and quickly jam it underneath the door buying you a little bit of time.")
+        decision2 = input("food or mask?")
+        decision2 = decision2.lower()
+        if decision2 == "food":
+          print("You try to eat the food but suffocate due to lack of oxygen.")
+          print("You Lose.")
+          print("")
+          loss = 1
+        elif decision2 == "mask":
+          print("You replace your broken oxygen mask with the new one and take a deep breath of air.")
+          print("You know the killer will break into the room very quickly.")
+          print("You need to act fast.")
+          decision3 = input("run, hide, fight, or talk?")
+          decision3 = decision3.lower()
+          if decision3 == "run":
+            print("You decide to take the time you have and run from the killer.")
+            print("You run into the cafeteria and notice two different exits.")
+            print("A back exit that leads outside and a front exit that leads to another hallway.")
+            print("Which exit do you want to run to?")
+            leave = input("front or back")
+            leave = leave.lower()
+            if leave== ("front"):
+              print ("You run outside and lose track of the killer and it appears as if the coast is clear.")
+              loss = 1
+              break
+            elif leave == ("back"):
+              print("You run out into the hallway and turn the corner as you are face to fae with the killer.")
+              print("With one quick swing of his bat your vision fades and you are knocked out cold.")
+              print("You Lose")
+              print("")
+              loss = 1
+          elif decision3 == "hide":
+            #aList.remove('xyz');
+            #myList.insert(0,"Yes")
+            def fridge():
+              print("You go to hide into the fridge, as the killer gains access to the kitchen. The killer breaks open the doors to the kitchen and walks around the room until he walks by the fridge, curious if anyone is in there. You were able to fit in thanks to your small size, and he assumes that the fridge is too small to fit a human being. He walks away.")
+            def freezer():
+              print("You run into the freezer to hide and are able to lock the door. The killer breaks in and walks throughout the whole vicinity to look for a victim. After walking past the fridge and turns on the dishwasher, he walks to the freezer and looks through the door window. You crouch so that he cannot see you, therefore he sees nothing and walks away. Then, the killer leaves the kitchen. ")
+            print("*please type all your answers in lowercase letters*")
+            print("")
+            print("After being able to delay the killer, you now decide to hide in the kitchen.")
+            print("")
+            print("")                                              
+            print("You are surrounded by different kitchenware, machines and doors. In order to fit into a hiding spot, your choices for hiding are either in the freezer, dishwasher, or fridge.")
+            print("")
+            print(". . . You hear banging on the door, your time is limited . . .")
+            print("")
+            x = input("Where will you hide? freezer, fridge, or dishwasher?")
+            print("")
+            if x == "freezer":
+              freezer()
+                          
+              print("")
+              print("")
+              print("After the killer leaves the kitchen, you leave your hiding spot and see him walk into the cafeteria. He walks from table to table and checking under each one to find any victims. Next to the kitchen door, you see the metal tray that you originally used to keep the door closed.")
+              y = input("Do you want to keep this tray?")
+              z = 0
+              if y == "yes":
+                z = ['zero']
+                z.remove('zero')
+                z.insert(0, 'tray')
+              else:
+                print("")
+              print("The killer hears noise in the kitchen and his making his way towards you from the cafeteria. Having to think fast, your only choices are fight or flight. Keep in mind that the freezer lock is broken, and the dishwasher is turned on; so your only hiding option is the fridge.")
+              h = input("Are you going to fight back, or hide in the fridge? Type fight to fight back or hide otherwise.")
+              if h == "fight":
+                print("")
+                i = input("Do you want to hit him right away or from behind? Type now to hit right away or behind otherwise.")
+                if i == "now":
+                  print("")
+                  print("You attempt to hit him right away, but the killer sees you and instantly defends it, then attacks you.")
+                  print("")
+                  print("Y O U    L O S E")
+                  print("")
+                  loss = 1
+                if i == "behind":
+                  print("")
+                  print("You sneak up behind the killer as he walks into the kitchen, hitting him in the head with the metal tray you originally had with you. He gets knocked out by a strike to the head, giving you a chance to escape the cafeteria while he's unconcsious. ")
+                  loss = 1
+                  break
+                if h == "hide":
+                  print("You go to the fridge to hide, and when he goes to the kitchen he heads to the fridge as part of his search. He opens the fridge and finds you, then attacks you. ")
+                  print("Y O U    L O S E") 
+                  print("")
+                  loss = 1
+            elif x == "fridge": 
+              fridge()
+                          
+              print("")
+              print("")
+              print("After the killer leaves the kitchen, you leave your hiding spot and see him walk into the cafeteria. He walks from table to table and checking under each one to find any victims. Next to the kitchen door, you see the metal tray that you originally used to keep the door closed.")
+              y = input("Do you want to keep this tray?")
+              z = 0
+              if y == "yes":
+                z = ['zero']
+                z.remove('zero')
+                z.insert(0, 'tray')
+              else:
+                print("")
+              print("The killer hears noise in the kitchen and his making his way towards you from the cafeteria. Having to think fast, your only choices are fight or flight. Keep in mind that the freezer lock is broken, and the dishwasher is turned on; so your only hiding option is the fridge.")
+              h = input("Are you going to fight back, or hide in the fridge? Type fight to fight back or hide otherwise.")
+              if h == "fight":
+                print("")
+                i = input("Do you want to hit him right away or from behind? Type now to hit right away or behind otherwise.")
+                if i == "now":
+                  print("")
+                  print("You attempt to hit him right away, but the killer sees you and instantly defends it, then attacks you.")
+                  print("")
+                  print("Y O U    L O S E")
+                  print("")
+                  loss = 1
+                if i == "behind":
+                  print("")
+                  print("You sneak up behind the killer as he walks into the kitchen, hitting him in the head with the metal tray you originally had with you. He gets knocked out by a strike to the head, giving you a chance to escape the cafeteria while he's unconcsious. ")
+                  loss = 1
+                  break
+              elif h == "hide":
+                  print("You go to the fridge to hide, and when he goes to the kitchen he heads to the fridge as part of his search. He opens the fridge and finds you, then attacks you. ")
+                  print("Y O U    L O S E") 
+                  print("")
+                  loss = 1
+            elif x == "dishwasher":
+              print("After hiding in the dishwasher, the killer breaks the door and gains access to the kitchen. He walks around the area looking for a new victim. Seeing the dishwasher, he is curious if someone is hiding in there. He turns it on and leaves the room.")
+              print("")
+              print("Y O U     L O S E")
+              print("")
+              loss = 1
+          elif decision3 == "talk":
+            print("You are still unsure as to what the killer wants with you and why he's doing what he's doing.")
+            print("You decide to try and ask him some questions.")
+            print('"Hey!" You yell.')
+            print('"What do you want with me?!"')
+            print("The killer doesn't stop. He keeps slamming the door, trying to get in.")
+            print("You are unsure what to do.")
+            print("")
+            reason = input("beg, threaten, question, or reason?")
+            reason = reason.lower()
+            if reason == "beg":
+              print('"Please, I have a wife and two kids." You say.')
+              print("You hear a loud bang and the kitchen door swings open.")
+              print("In a state of panic you begin to run but it's already too late.")
+              print("With a quick swing of his bat you're knocked out cold onto the kitchen floor.")
               print("You Lose.")
+              print("")
               loss = 1
-              break
-            elif kitchen_weapon == "fists":
-              print("You chose to rely on your pure manhood against this murderer and you chose your fists.")
-              print("The killer breaks open the door and see's you standing there fists held high.")
-              print("The killer can't help but laugh at how helpless you look.")
-              print("The killer takes off his mask to reveal that it's Ameer.")
-              print('He looks at you and says "April fools." and walks away.')
-              print("You Win.")
+            elif reason == "threaten":
+              print("You decided to threaten the killer.")
+              print("There are a couple utensils from the kitchen lying around.")
+              kitchen_weapon = input("Spoon, knife, or fists?")
+              kitchen_weapon = kitchen_weapon.lower()
+              if kitchen_weapon == "knife" or kitchen_weapon == "spoon":
+                print("Its too late.")
+                print("The door slams open and as you reach for the " + kitchen_weapon + ", you are struck over the head and your vision fades.")
+                print("You Lose.")
+                print("")
+                loss = 1
+              elif kitchen_weapon == "fists":
+                print("You chose to rely on your pure manhood against this murderer and you chose your fists.")
+                print("The killer breaks open the door and see's you standing there fists held high.")
+                print("The killer can't help but laugh at how helpless you look.")
+                print("The killer takes off his mask to reveal that it's Ameer.")
+                print('He looks at you and says "April fools." and walks away.')
+                print("")
+                loss = 1
+                break
+              else:
+                print("You decided to chose an unexisting weapon.")
+                print("The killer makes his way into the room and kills you.")
+                print("You Lose.")
+                print("")
+                loss = 1
+            elif reason == "reason":
+              if computerLabSecret == True:
+                print("Could this be Frank? the one you heard about in the lab?")
+                print('"Frank?" you say.')
+                print("The killer hesitates for a moment")
+                print('"How do you know that name?!" He says frantically.')
+                print("Before you get the chance to respond, the killer frantically runs away from the door and you are safe.")
+                print("")
+                loss = 1
+                break
+              else:
+                print('"Stop," you yell, "I will pay you anything you want."')
+                print("The killer hesitates for a second thinking about you're offer.")
+                print("But not for very long.")
+                print("The door slams open and the killer stands over you wielding his baseball bat.")
+                print("And with one swift swing, your vision fades.")
+                print("You Lose.")
+                print("")
               loss = 1
-              break
-              
-            else:
-              print("You decided to chose an unexisting weapon.")
-              print("The killer makes his way into the room and kills you.")
+            elif reason == "question":
+              print("You decided that you want to continue questioning the killer.")
+              print('"Hey! I asked you a question!" You yell.')
+              print('"You are too late," he says.')
+              print('"Nothing can save you now"')
+              print("He slams the door open and you try and run away to no avail")
+              print("You're struck over the head by a baseball bat and your vision fades.")
               print("You Lose.")
+              print("")
               loss = 1
-              break
-          elif reason == "reason":
-            print('"Stop," you yell, "I will pay you anything you want."')
-            print("The killer hesitates for a second thinking about you're offer.")
-            print("But not for very long.")
-            print("The door slams open and the killer stands over you wielding his baseball bat.")
-            print("And with one swift swing, your vision fades.")
-            print("You Lose.")
-            loss = 1
-            break
-          
-    else:
-      print("Make sure you chose one of the given items.")
+      else:
+        print("Make sure you chose one of the given items.")
+  print("You managed to escape the kitchen and you make your way into the next room.")
+  
+kitchen()
